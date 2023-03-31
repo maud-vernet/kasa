@@ -9,8 +9,8 @@ function RoutesList() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/A-propos" element={<Apropos />} />
-            <Route path="*" element={<P404 />} />
             <Route path="/Logement/:id" element={<Logement />} />
+            <Route path="*" element={<P404 />} />
         </Routes>
     )
 }
