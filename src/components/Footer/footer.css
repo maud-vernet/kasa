@@ -1,0 +1,14 @@
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 5% 0 3% 0;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer img {
+    margin: auto;
+    display: block;
+}
