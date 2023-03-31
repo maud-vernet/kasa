@@ -25,3 +25,9 @@ nav a {
         margin-left: 40px;
     }
 }
+
+@media screen and (max-width: 350px) {
+    #logo {
+        max-width: 25%;
+    }
+}
