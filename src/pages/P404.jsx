@@ -1,9 +1,7 @@
+import Error from '../components/Error'
+
 function P404() {
-    return (
-        <div>
-            <h1>Erreur</h1>
-        </div>
-    )
+    return <Error />
 }
 
 export default P404

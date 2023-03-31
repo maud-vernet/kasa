@@ -1,0 +1,30 @@
+#p404 {
+    box-sizing: border-box;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 0 5% 10% 5%;
+}
+
+#p404 p {
+    font-size: 24px;
+    margin-bottom: 100px;
+}
+
+#p404 h1 {
+    font-size: 150px;
+    margin-block-end: 0;
+}
+
+#p404 a {
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 425px) {
+    #p404 h1 {
+        font-size: 100px;
+    }
+
+    #p404 {
+        padding: 0 10% 20% 10%;
+    }
+}
