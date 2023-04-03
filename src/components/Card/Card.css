@@ -1,0 +1,64 @@
+#cards {
+    background-color: #f6f6f6;
+    width: 100%;
+    border-radius: 25px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 4%;
+    box-sizing: border-box;
+    row-gap: 30px;
+}
+
+.card {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    width: 30%;
+    height: 255px;
+    position: relative;
+}
+
+.card:hover > .card-title {
+    text-decoration: underline;
+}
+
+.card::before {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+}
+
+.card-title {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    position: absolute;
+    left: 5.88%;
+    right: 5.88%;
+    top: 73.73%;
+    bottom: 5.88%;
+    display: flex;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+    #cards {
+        background-color: #fff;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .card {
+        border-radius: 10px;
+        width: 100%;
+    }
+}
