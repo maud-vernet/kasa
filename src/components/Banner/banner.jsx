@@ -6,7 +6,7 @@ function Banner(props) {
             <div className="banner-img">
                 <img src={props.image} alt="" aria-hidden="true" />
             </div>
-            <h1>Chez vous, partout et ailleurs</h1>
+            <h1>{props.title}</h1>
         </div>
     )
 }

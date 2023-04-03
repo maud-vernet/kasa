@@ -1,8 +1,12 @@
+import Banner from '../components/Banner/Banner'
+import bannerImage from '../assets/a-propos-banner.png'
+const title = 'A propos'
+
 function Apropos() {
     return (
-        <div>
-            <h1>A propos</h1>
-        </div>
+        <main>
+            <Banner image={bannerImage} title={title} />
+        </main>
     )
 }
 
