@@ -8,7 +8,11 @@ function CardsList() {
             <h2 class="card-title">{logement.title}</h2>
         </NavLink>
     ))
-    return <div id="cards">{logementsList}</div>
+    return (
+        <section id="cards" className="main-section">
+            {logementsList}
+        </section>
+    )
 }
 
 export default CardsList
