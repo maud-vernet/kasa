@@ -26,6 +26,10 @@
     border: none;
 }
 
+.closed {
+    transform: rotate(180deg);
+}
+
 .box-description {
     font-size: 24px;
     color: var(--primary-color);
