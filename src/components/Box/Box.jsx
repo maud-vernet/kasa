@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import './Box.css'
 import openingIcon from '../../assets/vector.svg'
 
-function Box({ id, description, title }) {
+function Box({ description, title }) {
     const [isClosed, setIsOpen] = useState(true)
 
     return (
-        <div key={id} className="box">
+        <div className="box">
             {isClosed ? (
                 <div className="box-header">
                     <h2 className="box-title">{title}</h2>

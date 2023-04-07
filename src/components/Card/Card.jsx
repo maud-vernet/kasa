@@ -3,9 +3,9 @@ import './Card.css'
 
 function Card({ title, id, cover }) {
     return (
-        <NavLink to={'/logement/:' + id} className="card" key={id}>
+        <NavLink to={'/logement/' + id} className="card">
             <h2 className="card-title">{title}</h2>
-            <img src={cover} alt="aperçu du logement" className="card-cover" />
+            <img src={cover} alt="" aria-hidden="true" className="card-cover" />
         </NavLink>
     )
 }
