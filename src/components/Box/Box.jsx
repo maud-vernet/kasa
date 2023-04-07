@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
-import aproposDetails from '../../data/a-propos'
 import './Box.css'
 import openingIcon from '../../assets/vector.svg'
 
-function Boxes() {
+function Box({ id, description, title }) {
     const [isClosed, setIsOpen] = useState(true)
 
-    const boxes = aproposDetails.map((apropos) => (
-        <div key={apropos.id} className="box">
+    return (
+        <div key={id} className="box">
             {isClosed ? (
                 <div className="box-header">
-                    <h2 className="box-title">{apropos.title}</h2>
+                    <h2 className="box-title">{title}</h2>
                     <button
                         className="box-opening-system"
                         onClick={() => setIsOpen(false)}
@@ -24,7 +23,7 @@ function Boxes() {
             ) : (
                 <div>
                     <div className="box-header">
-                        <h2 className="box-title">{apropos.title}</h2>
+                        <h2 className="box-title">{title}</h2>
                         <button
                             className="box-opening-system"
                             onClick={() => setIsOpen(true)}
@@ -36,12 +35,11 @@ function Boxes() {
                             />
                         </button>
                     </div>
-                    <div className="box-description">{apropos.description}</div>
+                    <div className="box-description">{description}</div>
                 </div>
             )}
         </div>
-    ))
-    return <section className="main-section">{boxes}</section>
+    )
 }
 
-export default Boxes
+export default Box
