@@ -5,7 +5,7 @@ import './Card.css'
 function CardsList() {
     const logementsList = logements.map((logement) => (
         <NavLink to="/logement/:id" className="card" key={logement.id}>
-            <h2 class="card-title">{logement.title}</h2>
+            <h2 className="card-title">{logement.title}</h2>
         </NavLink>
     ))
     return (
