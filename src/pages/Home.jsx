@@ -28,15 +28,19 @@ function Home() {
             {isDataLoading ? (
                 <Loader />
             ) : (
-                <section id="cards" className="main-section">
-                    {logements.map((logement) => (
-                        <Card
-                            key={logement.id}
-                            title={logement.title}
-                            id={logement.id}
-                            cover={logement.cover}
-                        />
-                    ))}
+                <section className="main-section">
+                    <ul id="cards">
+                        {logements.map((logement) => (
+                            <li className="card">
+                                <Card
+                                    key={logement.id}
+                                    title={logement.title}
+                                    id={logement.id}
+                                    cover={logement.cover}
+                                />
+                            </li>
+                        ))}
+                    </ul>
                 </section>
             )}
         </main>
