@@ -11,7 +11,7 @@ function Logement() {
 
     const [logement, setLogement] = useState([])
 
-    const [isDataLoading, setDataLoading] = useState(false)
+    const [isDataLoading, setDataLoading] = useState(true)
 
     useEffect(() => {
         async function fetchData() {
@@ -25,6 +25,7 @@ function Logement() {
                 )
 
                 setLogement(logement)
+                console.log(logement)
             } catch (err) {
                 console.log(err)
             } finally {
@@ -62,7 +63,7 @@ function Logement() {
                     </div>
                     <div className="logement-tags-rate">
                         <div className="tags">
-                            <ul class="tags-list">
+                            <ul className="tags-list">
                                 {logement.tags.map((tag) => (
                                     <Tag tag={tag} key={tag} />
                                 ))}
