@@ -31,7 +31,7 @@ function Home() {
                 <section className="main-section">
                     <ul id="cards">
                         {logements.map((logement) => (
-                            <li className="card">
+                            <li className="card" key={logement.id}>
                                 <Card
                                     key={logement.id}
                                     title={logement.title}
