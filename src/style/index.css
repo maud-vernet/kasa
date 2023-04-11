@@ -82,3 +82,52 @@ main {
         max-width: 48%;
     }
 }
+
+/* style for logement page */
+
+.logement-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.logement-title {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-block-start: 0em;
+}
+
+.logement-location {
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.host {
+    display: flex;
+}
+
+.host-picture-container {
+    width: 64px;
+}
+
+.host-picture {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.host-name {
+    font-size: 18px;
+    width: 100px;
+    margin-right: 10px;
+    margin-block-start: 0em;
+    color: var(--primary-color);
+}
+
+.logement-tags-rate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tags {
+    width: 60%;
+}

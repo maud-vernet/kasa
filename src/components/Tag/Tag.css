@@ -1,0 +1,16 @@
+.tags-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-inline-start: 0px;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 25px 5px 25px;
+    white-space: nowrap;
+}
