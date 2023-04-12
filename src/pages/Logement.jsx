@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import Loader from '../components/Loader/Loader'
+import Slideshow from '../components/Slideshow/Slideshow'
 import Tag from '../components/Tag/Tag'
 import Rate from '../components/Rate/Rate'
 import Box from '../components/Box/Box'
@@ -43,6 +44,9 @@ function Logement() {
                 <Loader />
             ) : (
                 <div className="main-section">
+                    <div className="slideshow">
+                        <Slideshow pictures={logement.pictures} />
+                    </div>
                     <div className="logement-main-info">
                         <div className="logement-info">
                             <h1 className="logement-title">{logement.title}</h1>
