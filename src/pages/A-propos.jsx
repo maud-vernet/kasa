@@ -30,7 +30,7 @@ function Apropos() {
                         <Box
                             key={apropos.id}
                             title={apropos.title}
-                            description={apropos.description}
+                            content={apropos.description}
                         />
                     ))
                 )}

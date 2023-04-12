@@ -3,41 +3,28 @@ import './Box.css'
 import openingIcon from '../../assets/vector.svg'
 
 function Box({ content, title }) {
-    const [isClosed, setIsOpen] = useState(true)
+    const [boxState, updateBox] = useState(false)
 
     return (
         <div className="box">
-            {isClosed ? (
+            <div>
                 <div className="box-header">
                     <h2 className="box-title">{title}</h2>
                     <button
                         className="box-opening-system"
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => updateBox(!boxState)}
                     >
                         <img
                             src={openingIcon}
-                            alt="fermer la boîte pour cacher le détail"
+                            className={`button-${boxState}`}
+                            alt="Cliquez sur ce bouton pour cacher ou afficher le détail"
                         />
                     </button>
                 </div>
-            ) : (
-                <div>
-                    <div className="box-header">
-                        <h2 className="box-title">{title}</h2>
-                        <button
-                            className="box-opening-system"
-                            onClick={() => setIsOpen(true)}
-                        >
-                            <img
-                                src={openingIcon}
-                                alt="ouvrir la boîte pour lire le détail"
-                                className="closed"
-                            />
-                        </button>
-                    </div>
-                    <div className="box-description">{content}</div>
+                <div className={`hide-description-${boxState} box-description`}>
+                    {content}
                 </div>
-            )}
+            </div>
         </div>
     )
 }

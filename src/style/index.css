@@ -131,3 +131,8 @@ main {
 .tags {
     width: 60%;
 }
+
+.logement-details {
+    display: flex;
+    flex-direction: column;
+}
