@@ -70,7 +70,9 @@ function Logement() {
                             </ul>
                         </div>
                         <div className="rate">
-                            <Rate />
+                            <div>
+                                <Rate rating={logement.rating} />
+                            </div>
                         </div>
                     </div>
                 </div>
