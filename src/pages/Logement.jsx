@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import Loader from '../components/Loader/Loader'
 import Tag from '../components/Tag/Tag'
 import Rate from '../components/Rate/Rate'
+import Box from '../components/Box/Box'
 
 import { useState, useEffect } from 'react'
 
@@ -74,6 +75,22 @@ function Logement() {
                                 <Rate rating={logement.rating} />
                             </div>
                         </div>
+                    </div>
+                    <div className="logement-details">
+                        <Box
+                            title="Description"
+                            content={logement.description}
+                        />
+                        <Box
+                            title="Equipements"
+                            content={
+                                <ul>
+                                    {logement.equipments.map((equipment) => (
+                                        <li key={equipment}>{equipment}</li>
+                                    ))}
+                                </ul>
+                            }
+                        />
                     </div>
                 </div>
             )}

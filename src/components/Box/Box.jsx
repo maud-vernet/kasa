@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Box.css'
 import openingIcon from '../../assets/vector.svg'
 
-function Box({ description, title }) {
+function Box({ content, title }) {
     const [isClosed, setIsOpen] = useState(true)
 
     return (
@@ -35,7 +35,7 @@ function Box({ description, title }) {
                             />
                         </button>
                     </div>
-                    <div className="box-description">{description}</div>
+                    <div className="box-description">{content}</div>
                 </div>
             )}
         </div>
