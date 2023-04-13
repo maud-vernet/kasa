@@ -11,14 +11,12 @@ function Logement() {
     //récupération de l'id du logement dans l'url
     const logementFromUrl = useParams()
 
-    const [logement, setLogement] = useState([])
+    const [logement, setLogement] = useState({})
 
     const [isDataLoading, setDataLoading] = useState(true)
 
     useEffect(() => {
         async function fetchData() {
-            setDataLoading(true)
-
             try {
                 const response = await fetch('/logements.json')
                 const logements = await response.json()
@@ -42,10 +40,7 @@ function Logement() {
                 <Loader />
             ) : (
                 <div className="main-section">
-                    <Slideshow
-                        pictures={logement.pictures}
-                        key={logement.picture}
-                    />
+                    <Slideshow pictures={logement.pictures} />
 
                     <div className="logement-intro">
                         <div className="logement-main-info">

@@ -6,20 +6,18 @@ import bannerImage from '../assets/home-banner.png'
 
 import { useState, useEffect } from 'react'
 
-const title = 'Chez vous, partout et ailleurs'
-
 function Home() {
     const [logements, setLogements] = useState([])
-    const [isDataLoading, setDataLoading] = useState(false)
+    const [isDataLoading, setDataLoading] = useState(true)
+    const title = 'Chez vous, partout et ailleurs'
 
     useEffect(() => {
-        setDataLoading(true)
         fetch('logements.json')
             .then((response) => response.json())
             .then((logements) => {
                 setLogements(logements)
+                setDataLoading(false)
             })
-        setDataLoading(false)
     }, [])
 
     return (

@@ -3,20 +3,19 @@ import Banner from '../components/Banner/Banner'
 import Box from '../components/Box/Box'
 import Loader from '../components/Loader/Loader'
 import bannerImage from '../assets/a-propos-banner.png'
-const bannerTitle = 'A propos'
 
 function Apropos() {
     const [aproposData, setAproposData] = useState([])
-    const [isDataLoading, setDataLoading] = useState(false)
+    const [isDataLoading, setDataLoading] = useState(true)
+    const bannerTitle = 'A propos'
 
     useEffect(() => {
-        setDataLoading(true)
-        fetch('a-propos.json')
+        fetch('/a-propos.json')
             .then((response) => response.json())
             .then((aproposData) => {
                 setAproposData(aproposData)
+                setDataLoading(false)
             })
-        setDataLoading(false)
     }, [])
 
     return (
