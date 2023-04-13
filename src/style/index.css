@@ -158,7 +158,8 @@ main {
 
 .logement-details .box-description {
     font-size: 18px;
-    height: 100%;
+    height: 90%;
+    box-sizing: border-box;
 }
 
 .box-description ul {
