@@ -6,9 +6,7 @@ import rightArrow from '../../assets/right-arrow.svg'
 function Slideshow({ pictures }) {
     const [pictureNumber, setPictureNumber] = useState(0)
     const numberOfPictures = pictures.length
-    console.log(numberOfPictures)
 
-    console.log(pictureNumber)
     function leftArrowOnClick() {
         if (pictureNumber === 0) {
             setPictureNumber(numberOfPictures - 1)
@@ -25,23 +23,22 @@ function Slideshow({ pictures }) {
         }
     }
     return (
-        <div>
-            {pictures.map((picture, index) => (
-                <div className="slideshow-container">
-                    <div
-                        className="slideshow-picture"
-                        style={{
-                            backgroundImage: `url(${pictures[pictureNumber]})`,
-                        }}
-                    ></div>
-                </div>
+        <div className="slideshow-container">
+            {pictures.map((index) => (
+                <div
+                    key={index}
+                    className="slideshow-picture"
+                    style={{
+                        backgroundImage: `url(${pictures[pictureNumber]})`,
+                    }}
+                />
             ))}
             {numberOfPictures > 1 && (
                 <div className="slideshow-arrows">
-                    <button onClick={leftArrowOnClick}>
+                    <button onClick={leftArrowOnClick} className="left-arrow">
                         <img src={leftArrow} alt="précédente" />
                     </button>
-                    <button onClick={rightArrowOnClick}>
+                    <button onClick={rightArrowOnClick} className="right-arrow">
                         <img src={rightArrow} alt="suivante" />
                     </button>
                 </div>

@@ -228,3 +228,9 @@ main {
     height: 415px;
     margin-bottom: 40px;
 }
+
+@media screen and (max-width: 768px) {
+    .slideshow {
+        height: 255px;
+    }
+}

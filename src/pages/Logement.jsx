@@ -27,7 +27,6 @@ function Logement() {
                 )
 
                 setLogement(logement)
-                console.log(logement)
             } catch (err) {
                 console.log(err)
             } finally {
@@ -37,16 +36,17 @@ function Logement() {
 
         fetchData()
     }, [logementFromUrl.id])
-    console.log(logement)
     return (
         <main>
             {isDataLoading ? (
                 <Loader />
             ) : (
                 <div className="main-section">
-                    <div className="slideshow">
-                        <Slideshow pictures={logement.pictures} />
-                    </div>
+                    <Slideshow
+                        pictures={logement.pictures}
+                        key={logement.picture}
+                    />
+
                     <div className="logement-intro">
                         <div className="logement-main-info">
                             <h1 className="logement-title">{logement.title}</h1>
