@@ -9,5 +9,7 @@
 @media screen and (max-width: 768px) {
     .rate > img {
         width: 13px;
+        margin-left: 0px;
+        margin-right: 10px;
     }
 }

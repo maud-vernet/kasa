@@ -201,11 +201,6 @@ main {
     .host-picture-container {
         width: 32px;
     }
-
-    .rate > img {
-        margin-left: 0px;
-        margin-right: 10px;
-    }
     .logement-details {
         flex-direction: column;
     }
