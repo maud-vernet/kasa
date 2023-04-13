@@ -47,37 +47,35 @@ function Logement() {
                     <div className="slideshow">
                         <Slideshow pictures={logement.pictures} />
                     </div>
-                    <div className="logement-main-info">
-                        <div className="logement-info">
+                    <div className="logement-intro">
+                        <div className="logement-main-info">
                             <h1 className="logement-title">{logement.title}</h1>
                             <p className="logement-location">
                                 {logement.location}
                             </p>
-                        </div>
-                        <div className="host">
-                            <p className="host-name">{logement.host.name}</p>
-                            <div className="host-picture-container">
-                                <img
-                                    className="host-picture"
-                                    src={logement.host.picture}
-                                    alt=""
-                                    aria-hidden="true"
-                                />
+                            <div className="tags">
+                                <ul className="tags-list">
+                                    {logement.tags.map((tag) => (
+                                        <Tag tag={tag} key={tag} />
+                                    ))}
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div className="logement-tags-rate">
-                        <div className="tags">
-                            <ul className="tags-list">
-                                {logement.tags.map((tag) => (
-                                    <Tag tag={tag} key={tag} />
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="rate">
-                            <div>
-                                <Rate rating={logement.rating} />
+                        <div className="logement-host-rate">
+                            <div className="host">
+                                <p className="host-name">
+                                    {logement.host.name}
+                                </p>
+                                <div className="host-picture-container">
+                                    <img
+                                        className="host-picture"
+                                        src={logement.host.picture}
+                                        alt=""
+                                        aria-hidden="true"
+                                    />
+                                </div>
                             </div>
+                            <Rate rating={logement.rating} />
                         </div>
                     </div>
                     <div className="logement-details">

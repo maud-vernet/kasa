@@ -1,3 +1,5 @@
+/* global style */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
 
 body {
@@ -85,25 +87,42 @@ main {
 
 /* style for logement page */
 
-.logement-main-info {
+.logement-intro {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.logement-main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .logement-title {
     font-size: 36px;
     color: var(--primary-color);
     margin-block-start: 0em;
+    margin-block-end: 0.4em;
 }
 
 .logement-location {
     font-size: 18px;
     color: var(--primary-color);
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+}
+
+.logement-host-rate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .host {
     display: flex;
+    justify-content: flex-end;
 }
 
 .host-picture-container {
@@ -121,20 +140,85 @@ main {
     margin-right: 10px;
     margin-block-start: 0em;
     color: var(--primary-color);
-}
-
-.logement-tags-rate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.tags {
-    width: 60%;
+    text-align: right;
 }
 
 .logement-details {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logement-details .box {
+    width: 48%;
+}
+
+.logement-details h2 {
+    font-size: 18px;
+}
+
+.logement-details .box-description {
+    font-size: 18px;
+    height: 100%;
+}
+
+.box-description ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.box-description ul li {
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .logement-main-info {
+        margin-bottom: 20px;
+    }
+
+    .logement-intro {
+        flex-direction: column;
+    }
+
+    .logement-title {
+        font-size: 18px;
+    }
+
+    .logement-location {
+        font-size: 14px;
+    }
+
+    .logement-host-rate {
+        flex-direction: row-reverse;
+    }
+    .host-name {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    .host-picture-container {
+        width: 32px;
+    }
+
+    .rate > img {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    .logement-details {
+        flex-direction: column;
+    }
+    .logement-details .box {
+        width: 100%;
+    }
+
+    .logement-details h2 {
+        font-size: 12px;
+    }
+
+    .logement-details .box-description {
+        font-size: 12px;
+    }
 }
 
 /* style for slideshow logement page */
@@ -142,4 +226,5 @@ main {
 .slideshow {
     width: 100%;
     height: 415px;
+    margin-bottom: 40px;
 }

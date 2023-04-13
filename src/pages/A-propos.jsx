@@ -22,7 +22,7 @@ function Apropos() {
     return (
         <main>
             <Banner image={bannerImage} title={bannerTitle} />
-            <section className="main-section">
+            <section className="main-section a-propos">
                 {isDataLoading ? (
                     <Loader />
                 ) : (

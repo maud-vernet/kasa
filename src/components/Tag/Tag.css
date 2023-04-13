@@ -1,8 +1,8 @@
 .tags-list {
     list-style: none;
     display: flex;
-    justify-content: space-between;
     padding-inline-start: 0px;
+    margin-block-end: 0em;
 }
 
 .tag {
@@ -13,4 +13,16 @@
     text-align: center;
     padding: 5px 25px 5px 25px;
     white-space: nowrap;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .tags-list {
+        flex-flow: wrap;
+    }
+
+    .tag {
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
 }
