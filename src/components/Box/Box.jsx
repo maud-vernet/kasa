@@ -4,6 +4,9 @@ import openingIcon from '../../assets/vector.svg'
 
 function Box({ content, title }) {
     const [boxState, updateBox] = useState(true)
+    console.log(content)
+    const isArray = Array.isArray(content)
+    console.log(isArray)
 
     return (
         <div className="box">
@@ -27,7 +30,15 @@ function Box({ content, title }) {
                     boxState ? 'hidden-description' : ''
                 }`}
             >
-                {content}
+                {isArray ? (
+                    <ul>
+                        {content.map((equipment) => (
+                            <li key={equipment}>{equipment}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>{content}</p>
+                )}
             </div>
         </div>
     )

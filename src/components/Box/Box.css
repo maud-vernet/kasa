@@ -55,6 +55,22 @@
     padding-bottom: 0;
 }
 
+.box-description p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.box-description ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.box-description ul li {
+    margin-bottom: 5px;
+}
+
 @media screen and (max-width: 768px) {
     .box {
         width: 100%;

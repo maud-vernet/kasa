@@ -25,6 +25,7 @@ function Logement() {
                 )
 
                 setLogement(logement)
+                console.log(logement.equipments)
             } catch (err) {
                 console.log(err)
             } finally {
@@ -80,13 +81,7 @@ function Logement() {
                         />
                         <Box
                             title="Equipements"
-                            content={
-                                <ul>
-                                    {logement.equipments.map((equipment) => (
-                                        <li key={equipment}>{equipment}</li>
-                                    ))}
-                                </ul>
-                            }
+                            content={logement.equipments}
                         />
                     </div>
                 </div>

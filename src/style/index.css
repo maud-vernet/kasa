@@ -159,17 +159,6 @@ main {
     box-sizing: border-box;
 }
 
-.box-description ul {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    list-style: none;
-    padding-inline-start: 0px;
-}
-
-.box-description ul li {
-    margin-bottom: 5px;
-}
-
 @media screen and (max-width: 768px) {
     .logement-main-info {
         margin-bottom: 20px;
