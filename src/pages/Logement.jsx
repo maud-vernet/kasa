@@ -25,7 +25,6 @@ function Logement() {
                 )
 
                 setLogement(logement)
-                console.log(logement.equipments)
             } catch (err) {
                 console.log(err)
             } finally {
