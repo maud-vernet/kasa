@@ -12,12 +12,20 @@ function Home() {
     const title = 'Chez vous, partout et ailleurs'
 
     useEffect(() => {
-        fetch('logements.json')
-            .then((response) => response.json())
-            .then((logements) => {
+        async function fetchData() {
+            try {
+                const response = await fetch('/logements.json')
+                const logements = await response.json()
+
                 setLogements(logements)
+            } catch (err) {
+                console.log(err)
+            } finally {
                 setDataLoading(false)
-            })
+            }
+        }
+
+        fetchData()
     }, [])
 
     return (

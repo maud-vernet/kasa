@@ -29,9 +29,12 @@
     border: none;
 }
 
-.button-false {
-    transform: rotate(180deg);
+.opening-button {
     transition: all 0.25s ease-out;
+}
+
+.closed-button {
+    transform: rotate(180deg);
 }
 
 .box-description {
@@ -42,12 +45,12 @@
     border-radius: 5px;
     padding: 15px;
     padding-top: 25px;
+    transition: all 0.25s ease-in-out;
 }
 
-.hide-description-true {
+.hidden-description {
     max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.25s ease-in-out;
     padding-top: 0;
     padding-bottom: 0;
 }

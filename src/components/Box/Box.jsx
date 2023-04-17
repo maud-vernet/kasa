@@ -3,7 +3,7 @@ import './Box.css'
 import openingIcon from '../../assets/vector.svg'
 
 function Box({ content, title }) {
-    const [boxState, updateBox] = useState(false)
+    const [boxState, updateBox] = useState(true)
 
     return (
         <div className="box">
@@ -15,12 +15,18 @@ function Box({ content, title }) {
                 >
                     <img
                         src={openingIcon}
-                        className={`button-${boxState}`}
+                        className={`opening-button ${
+                            boxState ? 'closed-button' : ''
+                        }`}
                         alt="Cliquez sur ce bouton pour cacher ou afficher le détail"
                     />
                 </button>
             </div>
-            <div className={`hide-description-${boxState} box-description`}>
+            <div
+                className={`box-description ${
+                    boxState ? 'hidden-description' : ''
+                }`}
+            >
                 {content}
             </div>
         </div>

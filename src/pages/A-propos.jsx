@@ -10,12 +10,20 @@ function Apropos() {
     const bannerTitle = 'A propos'
 
     useEffect(() => {
-        fetch('/a-propos.json')
-            .then((response) => response.json())
-            .then((aproposData) => {
+        async function fetchData() {
+            try {
+                const response = await fetch('/a-propos.json')
+                const aproposData = await response.json()
+
                 setAproposData(aproposData)
+            } catch (err) {
+                console.log(err)
+            } finally {
                 setDataLoading(false)
-            })
+            }
+        }
+
+        fetchData()
     }, [])
 
     return (
