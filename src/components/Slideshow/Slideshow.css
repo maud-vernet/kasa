@@ -5,6 +5,11 @@
     margin-bottom: 50px;
 }
 
+.slideshow-pictures {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
 .slideshow-picture {
     width: 100%;
     height: 425px;
