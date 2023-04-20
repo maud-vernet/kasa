@@ -24,17 +24,12 @@ function Slideshow({ pictures }) {
     }
     return (
         <div className="slideshow-container">
-            <ul className="slideshow-pictures">
-                {pictures.map((index) => (
-                    <li
-                        key={index}
-                        className="slideshow-picture"
-                        style={{
-                            backgroundImage: `url(${pictures[pictureNumber]})`,
-                        }}
-                    ></li>
-                ))}
-            </ul>
+            <div
+                className="slideshow-picture"
+                style={{
+                    backgroundImage: `url(${pictures[pictureNumber]})`,
+                }}
+            ></div>
 
             {numberOfPictures > 1 && (
                 <div className="slideshow-arrows">
