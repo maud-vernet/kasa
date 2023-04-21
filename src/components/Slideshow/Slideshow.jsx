@@ -8,18 +8,20 @@ function Slideshow({ pictures }) {
     const numberOfPictures = pictures.length
 
     function leftArrowOnClick() {
+        //si on est sur la première image
         if (pictureNumber === 0) {
-            setPictureNumber(numberOfPictures - 1)
+            setPictureNumber(numberOfPictures - 1) //retour à la dernière image
         } else {
-            setPictureNumber(pictureNumber - 1)
+            setPictureNumber(pictureNumber - 1) // sinon image actuelle - 1
         }
     }
 
     function rightArrowOnClick() {
+        //si on est sur la dernière image
         if (pictureNumber >= numberOfPictures - 1) {
-            setPictureNumber(0)
+            setPictureNumber(0) //retour à la première image
         } else {
-            setPictureNumber(pictureNumber + 1)
+            setPictureNumber(pictureNumber + 1) // sinon image actuelle + 1
         }
     }
     return (
