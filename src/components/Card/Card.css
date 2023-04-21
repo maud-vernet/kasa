@@ -1,4 +1,4 @@
-.card:hover > .card-title {
+.card:hover .card-title {
     text-decoration: underline;
 }
 
