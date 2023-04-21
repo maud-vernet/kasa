@@ -4,6 +4,7 @@ import Slideshow from '../components/Slideshow/Slideshow'
 import Tag from '../components/Tag/Tag'
 import Rate from '../components/Rate/Rate'
 import Box from '../components/Box/Box'
+import P404 from './p404'
 
 import { useState, useEffect } from 'react'
 
@@ -34,59 +35,66 @@ function Logement() {
 
         fetchData()
     }, [logementFromUrl.id])
-    return (
-        <main>
-            {isDataLoading ? (
-                <Loader />
-            ) : (
-                <div className="main-section">
-                    <Slideshow pictures={logement.pictures} />
 
-                    <div className="logement-intro">
-                        <div className="logement-main-info">
-                            <h1 className="logement-title">{logement.title}</h1>
-                            <p className="logement-location">
-                                {logement.location}
-                            </p>
-                            <div className="tags">
-                                <ul className="tags-list">
-                                    {logement.tags.map((tag) => (
-                                        <Tag tag={tag} key={tag} />
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="logement-host-rate">
-                            <div className="host">
-                                <p className="host-name">
-                                    {logement.host.name}
+    if (logement === undefined) {
+        return <P404 />
+    } else {
+        return (
+            <main>
+                {isDataLoading ? (
+                    <Loader />
+                ) : (
+                    <div className="main-section">
+                        <Slideshow pictures={logement.pictures} />
+
+                        <div className="logement-intro">
+                            <div className="logement-main-info">
+                                <h1 className="logement-title">
+                                    {logement.title}
+                                </h1>
+                                <p className="logement-location">
+                                    {logement.location}
                                 </p>
-                                <div className="host-picture-container">
-                                    <img
-                                        className="host-picture"
-                                        src={logement.host.picture}
-                                        alt=""
-                                        aria-hidden="true"
-                                    />
+                                <div className="tags">
+                                    <ul className="tags-list">
+                                        {logement.tags.map((tag) => (
+                                            <Tag tag={tag} key={tag} />
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
-                            <Rate rating={logement.rating} />
+                            <div className="logement-host-rate">
+                                <div className="host">
+                                    <p className="host-name">
+                                        {logement.host.name}
+                                    </p>
+                                    <div className="host-picture-container">
+                                        <img
+                                            className="host-picture"
+                                            src={logement.host.picture}
+                                            alt=""
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+                                </div>
+                                <Rate rating={logement.rating} />
+                            </div>
+                        </div>
+                        <div className="logement-details">
+                            <Box
+                                title="Description"
+                                content={logement.description}
+                            />
+                            <Box
+                                title="Equipements"
+                                content={logement.equipments}
+                            />
                         </div>
                     </div>
-                    <div className="logement-details">
-                        <Box
-                            title="Description"
-                            content={logement.description}
-                        />
-                        <Box
-                            title="Equipements"
-                            content={logement.equipments}
-                        />
-                    </div>
-                </div>
-            )}
-        </main>
-    )
+                )}
+            </main>
+        )
+    }
 }
 
 export default Logement
