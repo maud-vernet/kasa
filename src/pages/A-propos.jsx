@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Banner from '../components/Banner/Banner'
 import Box from '../components/Box/Box'
 import Loader from '../components/Loader/Loader'
@@ -27,22 +28,27 @@ function Apropos() {
     }, [])
 
     return (
-        <main>
-            <Banner image={bannerImage} title={bannerTitle} />
-            <section className="main-section a-propos">
-                {isDataLoading ? (
-                    <Loader />
-                ) : (
-                    aproposData.map((apropos) => (
-                        <Box
-                            key={apropos.id}
-                            title={apropos.title}
-                            content={apropos.description}
-                        />
-                    ))
-                )}
-            </section>
-        </main>
+        <HelmetProvider>
+            <Helmet>
+                <title>A propos</title>
+            </Helmet>
+            <main>
+                <Banner image={bannerImage} title={bannerTitle} />
+                <section className="main-section a-propos">
+                    {isDataLoading ? (
+                        <Loader />
+                    ) : (
+                        aproposData.map((apropos) => (
+                            <Box
+                                key={apropos.id}
+                                title={apropos.title}
+                                content={apropos.description}
+                            />
+                        ))
+                    )}
+                </section>
+            </main>
+        </HelmetProvider>
     )
 }
 

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Loader from '../components/Loader/Loader'
 import Slideshow from '../components/Slideshow/Slideshow'
 import Tag from '../components/Tag/Tag'
@@ -40,59 +41,64 @@ function Logement() {
         return <P404 />
     } else {
         return (
-            <main>
-                {isDataLoading ? (
-                    <Loader />
-                ) : (
-                    <div className="main-section">
-                        <Slideshow pictures={logement.pictures} />
+            <HelmetProvider>
+                <Helmet>
+                    <title>{logement.title}</title>
+                </Helmet>
+                <main>
+                    {isDataLoading ? (
+                        <Loader />
+                    ) : (
+                        <div className="main-section">
+                            <Slideshow pictures={logement.pictures} />
 
-                        <div className="logement-intro">
-                            <div className="logement-main-info">
-                                <h1 className="logement-title">
-                                    {logement.title}
-                                </h1>
-                                <p className="logement-location">
-                                    {logement.location}
-                                </p>
-                                <div className="tags">
-                                    <ul className="tags-list">
-                                        {logement.tags.map((tag) => (
-                                            <Tag tag={tag} key={tag} />
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="logement-host-rate">
-                                <div className="host">
-                                    <p className="host-name">
-                                        {logement.host.name}
+                            <div className="logement-intro">
+                                <div className="logement-main-info">
+                                    <h1 className="logement-title">
+                                        {logement.title}
+                                    </h1>
+                                    <p className="logement-location">
+                                        {logement.location}
                                     </p>
-                                    <div className="host-picture-container">
-                                        <img
-                                            className="host-picture"
-                                            src={logement.host.picture}
-                                            alt=""
-                                            aria-hidden="true"
-                                        />
+                                    <div className="tags">
+                                        <ul className="tags-list">
+                                            {logement.tags.map((tag) => (
+                                                <Tag tag={tag} key={tag} />
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
-                                <Rate rating={logement.rating} />
+                                <div className="logement-host-rate">
+                                    <div className="host">
+                                        <p className="host-name">
+                                            {logement.host.name}
+                                        </p>
+                                        <div className="host-picture-container">
+                                            <img
+                                                className="host-picture"
+                                                src={logement.host.picture}
+                                                alt=""
+                                                aria-hidden="true"
+                                            />
+                                        </div>
+                                    </div>
+                                    <Rate rating={logement.rating} />
+                                </div>
+                            </div>
+                            <div className="logement-details">
+                                <Box
+                                    title="Description"
+                                    content={logement.description}
+                                />
+                                <Box
+                                    title="Equipements"
+                                    content={logement.equipments}
+                                />
                             </div>
                         </div>
-                        <div className="logement-details">
-                            <Box
-                                title="Description"
-                                content={logement.description}
-                            />
-                            <Box
-                                title="Equipements"
-                                content={logement.equipments}
-                            />
-                        </div>
-                    </div>
-                )}
-            </main>
+                    )}
+                </main>
+            </HelmetProvider>
         )
     }
 }
